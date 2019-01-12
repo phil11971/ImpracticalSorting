@@ -15,7 +15,7 @@ namespace BeadSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = BeadSort(mas);
+            BeadSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -24,7 +24,7 @@ namespace BeadSort
         }
 
         //Сложность O(n) или O(sqrt(n)), 
-        public static int[] BeadSort(int[] data)
+        public static void BeadSort(int[] data)
         {
             int i, j, max, sum;
             byte[] beads;
@@ -56,8 +56,6 @@ namespace BeadSort
                 for (j = 0; j < max && Convert.ToBoolean(beads[i * max + j]); ++j) ;
                 data[i] = j;
             }
-
-            return data;
         }
 
         static void PrintMas(int[] arr)

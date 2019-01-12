@@ -17,7 +17,7 @@ namespace BogoSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = BogoSort(mas);
+            BogoSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -26,15 +26,13 @@ namespace BogoSort
         }
 
         //Сложность O(n*n!) в среднем
-        public static int[] BogoSort(int[] array)
+        public static void BogoSort(int[] array)
         {
             while (!IsSorted(array))
                 Shuffle(array);
-
-            return array;
         }
 
-        public static void Shuffle(int[] array)
+        private static void Shuffle(int[] array)
         {
             if (rnd == null) rnd = new Random();
 

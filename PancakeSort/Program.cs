@@ -15,7 +15,7 @@ namespace PancakeSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = PancakeSort(mas);
+            PancakeSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -23,7 +23,7 @@ namespace PancakeSort
             Console.ReadKey();
         }
 
-        static int[] PancakeSort(int[] arr)
+        public static void PancakeSort(int[] arr)
         {
             for (int curr_size = arr.Length; curr_size > 1; curr_size--)
             {
@@ -35,10 +35,9 @@ namespace PancakeSort
                     Flip(arr, curr_size - 1);
                 }
             }
-            return arr;
         }
 
-        static int FindMax(int[] arr, int n)
+        private static int FindMax(int[] arr, int n)
         {
             int mi, i;
             for (mi = 0, i = 0; i < n; i++)
@@ -48,7 +47,7 @@ namespace PancakeSort
             return mi;
         }
 
-        static void Flip(int[] arr, int i)
+        private static void Flip(int[] arr, int i)
         {
             int temp, start = 0;
             while (start < i)
